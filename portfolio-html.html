@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srujana Gopisetti | Data Analyst & Analytics Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f0f1a;--bg2:#1a1a2e;--card:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.06);--text:#e2e8f0;--muted:#94a3b8;--accent:#6366f1;--accent2:#818cf8;--pink:#ec4899;--green:#10b981}
+body{font-family:'Inter',system-ui,sans-serif;background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 50%,#16213e 100%);color:var(--text);min-height:100vh;overflow-x:hidden}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+nav{position:sticky;top:0;z-index:50;background:rgba(15,15,26,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,0.15);padding:0 24px}
+.ni{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nl{font-size:20px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nk{display:flex;gap:4px;flex-wrap:wrap}
+.nk button{background:transparent;border:none;color:var(--muted);padding:6px 12px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;transition:all 0.2s}
+.nk button:hover,.nk button.ac{background:rgba(99,102,241,0.2);color:var(--accent2)}
+.ct{max-width:1100px;margin:0 auto;padding:0 24px}
+.sec{padding:40px 0}
+.st{margin-bottom:28px}
+.st h2{font-size:26px;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--text),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.st .br{width:48px;height:3px;background:linear-gradient(90deg,var(--accent),var(--pink));border-radius:2px}
+.cd{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:16px}
+.tg{background:rgba(99,102,241,0.18);color:var(--accent2);padding:3px 10px;border-radius:6px;font-size:11px;font-weight:500;display:inline-block}
+.hero{padding:70px 0 50px;text-align:center}
+.av{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--pink));margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:#fff;box-shadow:0 0 40px rgba(99,102,241,0.3)}
+.hero h1{font-size:38px;font-weight:800;margin-bottom:6px;background:linear-gradient(135deg,var(--text),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:18px;color:var(--accent2);font-weight:500;margin-bottom:10px}
+.hero .tl{font-size:15px;color:var(--muted);max-width:480px;margin:0 auto 20px}
+.cr{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.tl2{position:relative;padding-left:26px}
+.tl2-line{position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--accent),var(--pink),transparent);border-radius:2px}
+.tl2-item{margin-bottom:28px;position:relative}
+.tl2-dot{position:absolute;left:-23px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl2-item h3{font-size:17px;font-weight:700;margin-bottom:3px}
+.tl2-item .co{font-size:13px;color:var(--accent2);font-weight:500;margin-bottom:2px}
+.tl2-item .pe{font-size:12px;color:#64748b;margin-bottom:12px}
+.tl2-item ul{padding-left:16px}
+.tl2-item li{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:3px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;cursor:pointer;transition:all 0.3s}
+.pc:hover{transform:translateY(-4px);border-color:rgba(99,102,241,0.4);box-shadow:0 12px 40px rgba(99,102,241,0.12)}
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.gp{font-size:12px;background:rgba(16,185,129,0.15);color:#6ee7b7;padding:3px 10px;border-radius:6px;display:inline-block}
+.ctr{display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(99,102,241,0.1);padding:10px 24px;border-radius:10px;font-size:14px;color:#c7d2fe;margin-bottom:8px}
+.db{background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:var(--accent2);padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;margin-bottom:24px}
+.db:hover{background:rgba(99,102,241,0.25)}
+.tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.tabs button{background:transparent;border:none;border-bottom:2px solid transparent;color:var(--muted);padding:10px 16px;cursor:pointer;font-size:13px;font-weight:600;text-transform:capitalize;font-family:inherit;transition:all 0.2s}
+.tabs button.ac{background:rgba(99,102,241,0.2);border-bottom-color:var(--accent);color:var(--accent2)}
+.tabs button:hover{color:var(--accent2)}
+.cb{background:#0d1117;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px}
+.ch{background:rgba(255,255,255,0.05);padding:10px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.ch span{font-size:13px;color:var(--muted);font-weight:600}
+.cb pre{padding:20px;margin:0;overflow:auto;font-size:11.5px;line-height:1.6;color:#c9d1d9;font-family:'Fira Code',Consolas,monospace;max-height:420px}
+.cc{position:relative;height:280px;margin:16px 0}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sq{background:rgba(13,17,23,0.7);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px}
+.sq .sqt{font-size:13px;font-weight:700;color:var(--accent2);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.sq .sqn{background:var(--accent);color:#fff;border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.sq pre{font-size:11px;line-height:1.5;color:#8b949e;font-family:'Fira Code',Consolas,monospace;margin:0;overflow-x:auto;white-space:pre-wrap}
+.sq .ins{margin-top:8px;padding:8px 12px;background:rgba(99,102,241,0.08);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:12px;color:#cbd5e1;line-height:1.5}
+.si{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+.sn{border-radius:8px;min-width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0}
+@media(max-width:768px){.cg{grid-template-columns:1fr}.hero h1{font-size:28px}.nk button{padding:4px 8px;font-size:11px}.pg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="ni"><span class="nl">SG</span><div class="nk" id="navLinks"></div></div></nav>
+<div class="ct"><div id="app"></div></div>
+
+<script>
+// All data stored without template literals to avoid ${} issues in code strings
+var P = {};
+P.name = "Srujana Gopisetti";
+P.title = "Data Analyst & Analytics Engineer";
+P.tagline = "Turning complex data into strategic narratives that drive decisions.";
+P.location = "Salt Lake City, Utah";
+P.email = "srujanagopisetti.gs@gmail.com";
+P.phone = "425-381-9887";
+P.github = "github.com/srujanagopisetti";
+P.linkedin = "linkedin.com/in/srujanagopisetti";
+P.about = "Product-focused Data Analyst with over 5 years of experience driving actionable insights across product, engineering, and business teams. I specialize in building scalable analytics solutions, designing compelling dashboards, and translating messy data into clear stories that move the needle. AWS Certified Data Engineer with expertise spanning healthcare, finance, and retail.";
+P.skills = [
+  {cat:"Analytics & ML",items:["Python","SQL","A/B Testing","Predictive Modeling","Statistical Analysis","Scikit-learn"]},
+  {cat:"Business Intelligence",items:["Tableau","QuickSight","Sigma","Data Storytelling","KPI Development"]},
+  {cat:"Data Engineering",items:["AWS","ETL/ELT","Alteryx","Airflow","DBT","Snowflake","Spark"]},
+  {cat:"Databases",items:["MySQL","DB2","NoSQL","Trino","Hive","S3"]},
+  {cat:"Collaboration",items:["Jira","Confluence","Salesforce","Airtable"]}
+];
+P.exp = [
+  {role:"Technology Business Analyst",co:"University of Utah, Lassonde Entrepreneur Institute",period:"Jan 2026 \u2013 Present",hl:["Built Python ETL pipelines across 5 departments, reducing manual prep time by 60%","Designed strategic dashboards for executive presentations and university rankings","Automated Qualtrics-to-Salesforce integration for 25,000+ records","Enforced data governance protocols, improving data reliability by 40%"]},
+  {role:"Data Analyst / Business Applications Intern",co:"University of Utah, Campus Store",period:"Aug 2024 \u2013 Dec 2025",hl:["Analyzed 100K+ transactions using SQL and data modeling, boosting engagement by 15%","Built SQL-driven Tableau dashboards and KPI reports for department managers","Improved NetSuite ERP data accuracy by 25% through targeted cleanup"]},
+  {role:"Lead Consultant",co:"Genpact (Client: CVS Health)",period:"Sep 2021 \u2013 Apr 2024",hl:["Created Tableau dashboards reducing incident response time by 30%","Developed ML-based anomaly detection, reducing data retrieval time by 55%","Led cross-functional collaboration, increasing delivery speed by 25%","Managed and mentored a team of five analysts"]},
+  {role:"Senior Developer",co:"IBM India (Client: Westpac)",period:"Feb 2018 \u2013 Sep 2021",hl:["Automated multi-source ETL pipelines for real-time insights","Led banking process optimization delivering $1M in cost savings","Improved SQL query efficiency by 60%","Automated Alteryx workflows, reducing manual effort by 85%"]}
+];
+P.edu = [
+  {deg:"M.S. Information Systems & Business Analytics",school:"University of Utah",gpa:"4.0",period:"Aug 2024 \u2013 Dec 2025"},
+  {deg:"B.Tech Electronics & Electrical Engineering",school:"Andhra University",gpa:"8.9/10",period:"Aug 2013 \u2013 May 2017"}
+];
+P.certs = ["AWS Certified Data Engineer \u2013 Associate","Alteryx Designer Certified"];
+
+var projects = [];
+
+// Project 1: Sales Dashboard
+var p1 = {id:"sales-dashboard",title:"Superstore Sales Storytelling Dashboard",cat:"Data Visualization",color:"#6366f1",icon:"\u{1F4CA}"};
+p1.desc = "Interactive Tableau dashboard analyzing $2.3M in sales across 4 regions and 3 segments.";
+p1.tools = ["Tableau","SQL","Excel","Python"];
+p1.impact = ["Identified $120K in losses from discounted Furniture","Consumer segment: 50% revenue but only 38% profit","Enabled quarterly business reviews with drill-down"];
+p1.github = "github.com/srujanagopisetti/superstore-sales-dashboard";
+p1.fullDesc = "This project analyzes the Superstore dataset ($2.3M in sales, 9,994 orders) to build a narrative-driven Tableau dashboard. The goal was to move beyond static reporting and create an interactive story that guides stakeholders from high-level KPIs down to actionable sub-category insights.\n\nThe analysis revealed critical profitability issues: while the Consumer segment drives 50% of revenue, it contributes only 38% of profit. The Furniture category, particularly Tables and Bookcases, consistently operates at a loss due to heavy discounting \u2014 totaling $120K in losses.\n\nThe dashboard includes four interconnected views: Executive Summary, Regional Performance, Category Deep-Dive, and Customer Segmentation.";
+p1.methodology = ["Data extraction and cleaning using SQL and Python (Pandas)","Exploratory analysis to identify key business questions","Designed dashboard wireframes aligned with storytelling framework","Built 4 interconnected Tableau views with parameter-driven interactivity","Validated insights with statistical significance testing on discount impact"];
+p1.code = [
+  "import pandas as pd",
+  "import numpy as np",
+  "",
+  "df = pd.read_csv('data/superstore.csv', parse_dates=['Order Date','Ship Date'])",
+  "df.columns = df.columns.str.strip().str.lower().str.replace(' ','_')",
+  "df = df.drop_duplicates(subset=['order_id','product_id'])",
+  "",
+  "# KPIs",
+  "total_sales = df['sales'].sum()",
+  "total_profit = df['profit'].sum()",
+  "margin = (total_profit / total_sales) * 100",
+  "print(f'Sales: ${total_sales:,.0f} | Margin: {margin:.1f}%')",
+  "",
+  "# Regional breakdown",
+  "regional = df.groupby('region').agg(",
+  "    sales=('sales','sum'), profit=('profit','sum'),",
+  "    orders=('order_id','nunique')",
+  ").assign(margin=lambda x: (x['profit']/x['sales']*100).round(1))",
+  "print(regional.sort_values('sales', ascending=False))",
+  "",
+  "# Loss-making sub-categories",
+  "loss = df.groupby(['category','sub_category']).agg(",
+  "    sales=('sales','sum'), profit=('profit','sum'),",
+  "    avg_discount=('discount','mean')",
+  ").query('profit < 0').sort_values('profit')",
+  "print(loss)",
+  "",
+  "# Discount impact",
+  "df['disc_bin'] = pd.cut(df['discount'], bins=[0,.1,.2,.3,.5,1],",
+  "    labels=['0-10%','10-20%','20-30%','30-50%','50%+'])",
+  "print(df.groupby('disc_bin').agg(avg_profit=('profit','mean')))"
+].join("\n");
+p1.sqlQueries = [
+  {title:"Regional Sales Performance with Margin Ranking",sql:"SELECT region,\n  ROUND(SUM(sales),0) AS total_sales,\n  ROUND(SUM(profit),0) AS total_profit,\n  ROUND(SUM(profit)/SUM(sales)*100,1) AS margin_pct,\n  COUNT(DISTINCT order_id) AS orders,\n  RANK() OVER (ORDER BY SUM(sales) DESC) AS sales_rank\nFROM superstore\nGROUP BY region\nORDER BY total_sales DESC;",insight:"West leads with $725K in sales and 14.9% margin. Central region has lowest margin at 7.9% despite $501K in sales \u2014 signals heavy discounting."},
+  {title:"Top 5 Loss-Making Sub-Categories",sql:"SELECT category, sub_category,\n  ROUND(SUM(sales),0) AS total_sales,\n  ROUND(SUM(profit),0) AS total_loss,\n  ROUND(AVG(discount)*100,1) AS avg_discount_pct,\n  COUNT(*) AS order_count\nFROM superstore\nWHERE sub_category IN (\n  SELECT sub_category FROM superstore\n  GROUP BY sub_category HAVING SUM(profit) < 0\n)\nGROUP BY category, sub_category\nORDER BY total_loss ASC LIMIT 5;",insight:"Tables lose $17.7K with 26% avg discount. Bookcases and Supplies also negative. Direct correlation between discount depth and profit erosion."},
+  {title:"Monthly Sales Trend with YoY Growth",sql:"WITH monthly AS (\n  SELECT DATE_TRUNC('month', order_date) AS month,\n    SUM(sales) AS sales, SUM(profit) AS profit\n  FROM superstore GROUP BY 1\n)\nSELECT month,\n  ROUND(sales,0) AS sales,\n  ROUND(profit,0) AS profit,\n  ROUND((sales - LAG(sales,12) OVER (ORDER BY month))\n    / NULLIF(LAG(sales,12) OVER (ORDER BY month),0)*100, 1) AS yoy_growth\nFROM monthly ORDER BY month;",insight:"Q4 consistently spikes 35-40% above Q1. YoY growth averages 18.2% but decelerates in Year 4."},
+  {title:"Discount Impact on Profitability",sql:"SELECT\n  CASE WHEN discount = 0 THEN 'No Discount'\n    WHEN discount <= 0.2 THEN '1-20%'\n    WHEN discount <= 0.3 THEN '21-30%'\n    ELSE '31%+' END AS discount_tier,\n  COUNT(*) AS orders,\n  ROUND(AVG(profit),2) AS avg_profit_per_order,\n  ROUND(SUM(profit),0) AS total_profit\nFROM superstore GROUP BY 1\nORDER BY avg_profit_per_order DESC;",insight:"Orders with 0% discount avg $28.66 profit. At 31%+ discount, avg profit drops to -$21.42. Break-even at ~20%."},
+  {title:"Customer Segment Profitability Deep Dive",sql:"SELECT segment,\n  COUNT(DISTINCT customer_id) AS customers,\n  ROUND(SUM(sales),0) AS total_sales,\n  ROUND(SUM(profit),0) AS total_profit,\n  ROUND(SUM(sales)/COUNT(DISTINCT customer_id),0) AS rev_per_cust,\n  ROUND(SUM(profit)/SUM(sales)*100,1) AS margin_pct\nFROM superstore GROUP BY segment\nORDER BY total_sales DESC;",insight:"Consumer: 50.6% of revenue, only 38.2% of profit. Home Office has highest margin at 17.1% and $376 revenue/customer."}
+];
+p1.charts = {
+  bar1:{type:"bar",title:"Sales by Region ($K)",labels:["West","East","Central","South"],datasets:[{label:"Sales",data:[725,679,501,392],bg:"#6366f1"},{label:"Profit",data:[108,92,40,47],bg:"#10b981"}]},
+  bar2:{type:"bar",title:"Profit by Sub-Category ($K)",labels:["Copiers","Phones","Accessories","Tables","Bookcases","Supplies"],datasets:[{label:"Profit",data:[56,45,42,-17,-14,-11],bg:["#10b981","#10b981","#10b981","#ef4444","#ef4444","#ef4444"]}]},
+  line1:{type:"line",title:"Monthly Sales Trend ($K)",labels:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],datasets:[{label:"Year 3",data:[18,12,28,20,24,22,19,34,41,52,46,60],color:"#818cf8"},{label:"Year 4",data:[22,16,32,26,30,28,25,40,48,58,53,68],color:"#ec4899"}]},
+  doughnut1:{type:"doughnut",title:"Revenue by Segment",labels:["Consumer","Corporate","Home Office"],data:[50.6,30.7,18.7],colors:["#6366f1","#818cf8","#c7d2fe"]},
+  bar3:{type:"bar",title:"Avg Profit by Discount Tier ($)",labels:["0%","1-20%","21-30%","31%+"],datasets:[{label:"Avg Profit",data:[28.66,14.22,1.85,-21.42],bg:["#10b981","#22c55e","#f59e0b","#ef4444"]}]}
+};
+projects.push(p1);
+
+// Project 2: RFM Analysis
+var p2 = {id:"rfm-analysis",title:"E-Commerce Customer Segmentation & RFM",cat:"Data Analysis",color:"#8b5cf6",icon:"\u{1F3AF}"};
+p2.desc = "End-to-end customer segmentation on 500K+ transactions using RFM analysis and K-Means.";
+p2.tools = ["Python","Pandas","Scikit-learn","Matplotlib"];
+p2.impact = ["Segmented 50K+ customers into 5 clusters","Champions (12%) drive 40% of revenue","Projected 18% churn reduction"];
+p2.github = "github.com/srujanagopisetti/ecommerce-rfm-segmentation";
+p2.fullDesc = "This project applies RFM (Recency, Frequency, Monetary) analysis on 500K+ transactions and 50K+ customers. Using K-Means on normalized RFM scores, customers were grouped into Champions (12%), Loyal (18%), Potential Loyalists (25%), At-Risk (22%), and Lost (23%).\n\nChampions alone drive 40% of revenue. The analysis informed targeted marketing \u2014 personalized rewards for Champions, re-engagement for At-Risk, win-back for Lost \u2014 projected to reduce churn by 18%.";
+p2.methodology = ["Cleaned 3.2% missing CustomerIDs, removed returns","Engineered Recency, Frequency, Monetary features","Log-transformed skewed monetary distributions","Elbow + silhouette analysis for optimal K=5","Mapped clusters to business-meaningful labels"];
+p2.code = [
+  "import pandas as pd",
+  "import numpy as np",
+  "from sklearn.preprocessing import StandardScaler",
+  "from sklearn.cluster import KMeans",
+  "",
+  "df = pd.read_csv('data/ecommerce.csv', parse_dates=['InvoiceDate'])",
+  "df = df[df['CustomerID'].notna() & (df['Quantity'] > 0)]",
+  "df['Amount'] = df['Quantity'] * df['UnitPrice']",
+  "",
+  "snapshot = df['InvoiceDate'].max() + pd.Timedelta(days=1)",
+  "rfm = df.groupby('CustomerID').agg(",
+  "    R=('InvoiceDate', lambda x: (snapshot-x.max()).days),",
+  "    F=('InvoiceNo','nunique'),",
+  "    M=('Amount','sum')).reset_index()",
+  "",
+  "rfm['M_log'] = np.log1p(rfm['M'])",
+  "X = StandardScaler().fit_transform(rfm[['R','F','M_log']])",
+  "rfm['Cluster'] = KMeans(n_clusters=5, random_state=42).fit_predict(X)",
+  "",
+  "labels = {0:'Champions',1:'Loyal',2:'Potential',3:'At-Risk',4:'Lost'}",
+  "rfm['Segment'] = rfm['Cluster'].map(labels)",
+  "rfm.to_csv('output/rfm_segments.csv', index=False)"
+].join("\n");
+p2.sqlQueries = [
+  {title:"RFM Score Calculation with NTILE",sql:"WITH rfm AS (\n  SELECT customer_id,\n    DATEDIFF(CURRENT_DATE, MAX(order_date)) AS recency,\n    COUNT(DISTINCT order_id) AS frequency,\n    ROUND(SUM(amount),2) AS monetary\n  FROM orders WHERE quantity > 0\n  GROUP BY customer_id\n)\nSELECT customer_id, recency, frequency, monetary,\n  NTILE(5) OVER (ORDER BY recency DESC) AS r_score,\n  NTILE(5) OVER (ORDER BY frequency) AS f_score,\n  NTILE(5) OVER (ORDER BY monetary) AS m_score\nFROM rfm;",insight:"NTILE gives equal-sized quintiles. Top R+F+M customers (score 15) represent 8% of base but 35% of revenue."},
+  {title:"Segment Revenue Contribution",sql:"WITH segments AS (\n  SELECT customer_id,\n    CASE\n      WHEN r_score>=4 AND f_score>=4 THEN 'Champions'\n      WHEN f_score>=3 AND m_score>=3 THEN 'Loyal'\n      WHEN r_score>=3 THEN 'Potential'\n      WHEN r_score>=2 THEN 'At-Risk'\n      ELSE 'Lost' END AS segment,\n    monetary\n  FROM rfm_scored\n)\nSELECT segment,\n  COUNT(*) AS customers,\n  ROUND(AVG(monetary),0) AS avg_revenue,\n  ROUND(SUM(monetary)*100.0 / (SELECT SUM(monetary) FROM segments), 1) AS rev_pct\nFROM segments GROUP BY segment\nORDER BY rev_pct DESC;",insight:"Champions: 12% of customers, 40% of revenue ($842 avg). Lost: 23% of customers, 5% of revenue ($54 avg)."},
+  {title:"Monthly Cohort Retention",sql:"WITH first_purchase AS (\n  SELECT customer_id,\n    DATE_TRUNC('month', MIN(order_date)) AS cohort\n  FROM orders GROUP BY customer_id\n),\nact AS (\n  SELECT o.customer_id, f.cohort,\n    EXTRACT(MONTH FROM AGE(o.order_date, f.cohort)) AS mnum\n  FROM orders o JOIN first_purchase f USING(customer_id)\n)\nSELECT cohort,\n  COUNT(DISTINCT CASE WHEN mnum=0 THEN customer_id END) AS m0,\n  COUNT(DISTINCT CASE WHEN mnum=1 THEN customer_id END) AS m1,\n  COUNT(DISTINCT CASE WHEN mnum=3 THEN customer_id END) AS m3,\n  COUNT(DISTINCT CASE WHEN mnum=6 THEN customer_id END) AS m6\nFROM act GROUP BY cohort ORDER BY cohort;",insight:"Month-1 retention: 32%. Drops to 18% by month-3. Nov-Dec cohorts retain 2.4x better \u2014 holiday buyers become repeat customers."}
+];
+p2.charts = {
+  bar1:{type:"bar",title:"Customers vs Revenue by Segment (%)",labels:["Champions","Loyal","Potential","At-Risk","Lost"],datasets:[{label:"% Customers",data:[12,18,25,22,23],bg:"#8b5cf6"},{label:"% Revenue",data:[40,25,18,12,5],bg:"#ec4899"}]},
+  bar2:{type:"bar",title:"Avg Revenue per Customer ($)",labels:["Champions","Loyal","Potential","At-Risk","Lost"],datasets:[{label:"Avg Revenue",data:[842,350,182,137,54],bg:["#10b981","#22c55e","#f59e0b","#f97316","#ef4444"]}]},
+  line1:{type:"line",title:"Cohort Retention Rate (%)",labels:["M0","M1","M2","M3","M4","M5","M6"],datasets:[{label:"Q1 Cohort",data:[100,32,26,18,15,13,12],color:"#8b5cf6"},{label:"Q4 Cohort",data:[100,48,38,32,28,25,23],color:"#ec4899"}]},
+  doughnut1:{type:"doughnut",title:"Customer Distribution",labels:["Champions","Loyal","Potential","At-Risk","Lost"],data:[12,18,25,22,23],colors:["#10b981","#22c55e","#f59e0b","#f97316","#ef4444"]}
+};
+projects.push(p2);
+
+// Project 3: Healthcare Pipeline
+var p3 = {id:"healthcare-pipeline",title:"Healthcare Claims Data Cleaning Pipeline",cat:"Data Engineering",color:"#ec4899",icon:"\u{1F3E5}"};
+p3.desc = "Automated cleaning and validation pipeline for 1M+ healthcare claims with Great Expectations.";
+p3.tools = ["Python","SQL","Great Expectations","Airflow","S3"];
+p3.impact = ["75% reduction in data quality issues","Standardized 200+ provider name formats","QA time: 8 hours to 45 minutes"];
+p3.github = "github.com/srujanagopisetti/healthcare-claims-pipeline";
+p3.fullDesc = "Working with 1M+ claims records containing inconsistent provider names, missing diagnosis codes, and duplicates, I built an end-to-end automated pipeline.\n\nPython handles transformation, Great Expectations runs 45+ validation rules, and Airflow orchestrates the workflow. Data quality issues dropped 75%, 200+ provider name variants were standardized, and weekly QA went from 8 hours to 45 minutes.";
+p3.methodology = ["Profiled raw data to catalog 15+ quality issue categories","Built modular Python cleaning functions per issue type","Fuzzy matching (Levenshtein) for provider standardization","45+ Great Expectations rules across 3 checkpoints","Airflow DAG: extract, clean, validate, load, alert"];
+p3.code = [
+  "import pandas as pd",
+  "from fuzzywuzzy import fuzz, process",
+  "",
+  "class ClaimsCleaner:",
+  "    def __init__(self, path):",
+  "        self.df = pd.read_csv(path, dtype={'diagnosis_code':str})",
+  "        self.log = []",
+  "",
+  "    def dedup(self):",
+  "        n = len(self.df)",
+  "        self.df = self.df.drop_duplicates(subset=['claim_id'])",
+  "        self.log.append('Dupes removed: ' + str(n-len(self.df)))",
+  "        return self",
+  "",
+  "    def fix_icd10(self):",
+  "        self.df['diagnosis_code'] = self.df['diagnosis_code'].str.strip().str.upper()",
+  "        bad = ~self.df['diagnosis_code'].str.match(r'^[A-Z]\\d{2}', na=False)",
+  "        self.df.loc[bad,'flag'] = 'INVALID_ICD10'",
+  "        self.log.append('Invalid ICD-10: ' + str(bad.sum()))",
+  "        return self",
+  "",
+  "    def match_providers(self, ref_path):",
+  "        ref = pd.read_csv(ref_path)['provider_name'].tolist()",
+  "        def match(n):",
+  "            if pd.isna(n): return n",
+  "            r = process.extractOne(n, ref, scorer=fuzz.ratio)",
+  "            return r[0] if r[1]>=85 else n",
+  "        self.df['provider_clean'] = self.df['provider_name'].apply(match)",
+  "        return self",
+  "",
+  "    def run(self):",
+  "        self.dedup().fix_icd10()",
+  "        for e in self.log: print('  > ' + e)",
+  "",
+  "ClaimsCleaner('data/raw_claims.csv').run()"
+].join("\n");
+p3.sqlQueries = [
+  {title:"Data Quality Scorecard by Source",sql:"SELECT data_source,\n  COUNT(*) AS total_records,\n  SUM(CASE WHEN claim_id IS NULL THEN 1 ELSE 0 END) AS null_ids,\n  SUM(CASE WHEN diagnosis_code NOT REGEXP '^[A-Z][0-9]{2}' THEN 1 ELSE 0 END) AS invalid_icd,\n  SUM(CASE WHEN billed_amount < 0 THEN 1 ELSE 0 END) AS neg_amounts,\n  ROUND(SUM(CASE WHEN diagnosis_code IS NULL OR billed_amount IS NULL\n    THEN 1 ELSE 0 END)*100.0/COUNT(*), 1) AS pct_incomplete\nFROM raw_claims GROUP BY data_source\nORDER BY pct_incomplete DESC;",insight:"Source 'Legacy_EHR' has 34% incomplete records \u2014 3x worse than other sources. Targeted for priority cleanup."},
+  {title:"Duplicate Detection with Window Functions",sql:"WITH dupes AS (\n  SELECT claim_id, patient_id, service_date, billed_amount,\n    ROW_NUMBER() OVER (\n      PARTITION BY patient_id, service_date, provider_npi, diagnosis_code\n      ORDER BY created_at DESC\n    ) AS rn\n  FROM raw_claims\n)\nSELECT COUNT(*) AS total_duplicates,\n  ROUND(SUM(billed_amount),0) AS duplicate_billed_value\nFROM dupes WHERE rn > 1;",insight:"Found 45,231 duplicate claims worth $3.2M. Keeping most recent record per partition prevents financial discrepancies."}
+];
+p3.charts = {
+  bar1:{type:"bar",title:"Data Quality Issues: Before vs After",labels:["Duplicates","Invalid ICD-10","Missing Fields","Outliers","Provider Mismatch"],datasets:[{label:"Before",data:[45000,32000,18000,8500,52000],bg:"#ef4444"},{label:"After",data:[0,2100,0,850,4200],bg:"#10b981"}]},
+  line1:{type:"line",title:"Weekly Quality Score Trend (%)",labels:["W1","W2","W3","W4","W5","W6","W7","W8","W9","W10","W11","W12"],datasets:[{label:"Quality Score",data:[62,65,71,74,78,82,85,88,91,93,95,96],color:"#ec4899"}]},
+  doughnut1:{type:"doughnut",title:"Issue Distribution (Before)",labels:["Provider Names","Duplicates","ICD-10","Missing","Outliers"],data:[33,29,21,12,5],colors:["#ec4899","#f97316","#f59e0b","#8b5cf6","#64748b"]}
+};
+projects.push(p3);
+
+// Project 4: Financial Forecast
+var p4 = {id:"financial-forecast",title:"Financial KPI Tracker & Forecasting",cat:"Predictive Analytics",color:"#f59e0b",icon:"\u{1F4B0}"};
+p4.desc = "Real-time KPI dashboard with 12-month Prophet revenue forecast achieving 4.2% MAPE.";
+p4.tools = ["Python","Prophet","Tableau","SQL","NetSuite"];
+p4.impact = ["4.2% MAPE forecast accuracy","Saved 15+ hours/month in reporting","Surfaced declining lines 2 months early"];
+p4.github = "github.com/srujanagopisetti/financial-kpi-forecaster";
+p4.fullDesc = "Combines real-time KPI tracking with Prophet forecasting on 36 months of NetSuite data. Prophet captures seasonality, holidays, and changepoints for 12-month forecasts with confidence intervals.\n\nThe Tableau dashboard overlays actuals vs. forecast, enabling proactive budget reallocation. Surfaced a declining product line 2 months before quarterly reviews.";
+p4.methodology = ["Extracted 36 months from NetSuite via SQL","Monthly aggregation with revenue recognition","Prophet with yearly seasonality + US holidays","Cross-validated with rolling 6-month windows","Tableau dashboard with Hyper extract"];
+p4.code = [
+  "import pandas as pd",
+  "from prophet import Prophet",
+  "from sklearn.metrics import mean_absolute_percentage_error",
+  "",
+  "df = pd.read_csv('data/monthly_revenue.csv', parse_dates=['month'])",
+  "df.columns = ['ds','y']",
+  "",
+  "train, test = df.iloc[:-6], df.iloc[-6:]",
+  "",
+  "model = Prophet(yearly_seasonality=True,",
+  "    changepoint_prior_scale=0.05, interval_width=0.90)",
+  "model.add_country_holidays(country_name='US')",
+  "model.fit(train)",
+  "",
+  "val = model.predict(test[['ds']])",
+  "mape = mean_absolute_percentage_error(test['y'], val['yhat'])*100",
+  "print('MAPE: ' + str(round(mape,1)) + '%')",
+  "",
+  "future = model.make_future_dataframe(periods=12, freq='MS')",
+  "forecast = model.predict(future)",
+  "forecast[['ds','yhat','yhat_lower','yhat_upper']].tail(12).to_csv(",
+  "    'output/forecast.csv', index=False)"
+].join("\n");
+p4.sqlQueries = [
+  {title:"Monthly Revenue with Running Totals",sql:"SELECT DATE_TRUNC('month', txn_date) AS month,\n  ROUND(SUM(revenue),0) AS monthly_rev,\n  ROUND(SUM(SUM(revenue)) OVER (\n    ORDER BY DATE_TRUNC('month', txn_date)\n    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n  ), 0) AS cumulative_rev,\n  ROUND(AVG(SUM(revenue)) OVER (\n    ORDER BY DATE_TRUNC('month', txn_date)\n    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW\n  ), 0) AS rolling_3m_avg\nFROM transactions GROUP BY 1 ORDER BY 1;",insight:"Rolling 3-month avg smooths holiday spikes. Cumulative shows $6.2M YTD, tracking 8% above forecast."},
+  {title:"Product Line Revenue Trend & Growth",sql:"SELECT product_line,\n  SUM(CASE WHEN quarter='Q1' THEN revenue END) AS q1,\n  SUM(CASE WHEN quarter='Q2' THEN revenue END) AS q2,\n  SUM(CASE WHEN quarter='Q3' THEN revenue END) AS q3,\n  SUM(CASE WHEN quarter='Q4' THEN revenue END) AS q4,\n  ROUND((SUM(CASE WHEN quarter='Q4' THEN revenue END) -\n    SUM(CASE WHEN quarter='Q1' THEN revenue END)) /\n    NULLIF(SUM(CASE WHEN quarter='Q1' THEN revenue END),0)*100, 1\n  ) AS growth_pct\nFROM transactions WHERE fiscal_year = 2024\nGROUP BY product_line ORDER BY growth_pct DESC;",insight:"Enterprise grew 34% Q1-Q4, but SMB declined 12% \u2014 flagged 2 months before quarterly review."}
+];
+p4.charts = {
+  line1:{type:"line",title:"Revenue: Actuals vs Forecast ($K)",labels:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan*","Feb*","Mar*"],datasets:[{label:"Actuals",data:[420,395,440,460,430,480,510,490,520,545,530,560,null,null,null],color:"#f59e0b"},{label:"Forecast",data:[null,null,null,null,null,null,null,null,null,null,null,null,575,590,550],color:"#818cf8",dash:true}]},
+  bar1:{type:"bar",title:"Revenue by Product Line ($K)",labels:["Enterprise","Mid-Market","SMB","Self-Serve"],datasets:[{label:"Q1",data:[180,120,95,45],bg:"#f59e0b"},{label:"Q4",data:[242,148,84,52],bg:"#ec4899"}]},
+  doughnut1:{type:"doughnut",title:"Revenue Mix",labels:["Enterprise","Mid-Market","SMB","Self-Serve"],data:[42,28,18,12],colors:["#f59e0b","#f97316","#818cf8","#64748b"]}
+};
+projects.push(p4);
+
+// Project 5: A/B Testing
+var p5 = {id:"ab-testing",title:"A/B Test Analysis Framework",cat:"Experimentation",color:"#10b981",icon:"\u{1F9EA}"};
+p5.desc = "Reusable Python framework for A/B analysis with sample sizing, significance testing, and reports.";
+p5.tools = ["Python","SciPy","Pandas","Tableau","SQL"];
+p5.impact = ["Analysis: 3 days to 4 hours","Standardized 10+ experiments","Adopted by 3 product teams"];
+p5.github = "github.com/srujanagopisetti/ab-test-framework";
+p5.fullDesc = "Product teams lacked consistent A/B methodology. This framework standardizes: sample size calculation, chi-squared + Welch's t-test, sequential testing for early stopping, and Tableau report templates.\n\nReduced turnaround from 3 days to 4 hours. Adopted by 3 teams running 10+ concurrent experiments.";
+p5.methodology = ["Audited existing workflows for inconsistencies","Built modular Python classes per stage","Frequentist + Bayesian significance testing","Automated Tableau report generation","Trained 3 product teams"];
+p5.code = [
+  "import numpy as np",
+  "from scipy import stats",
+  "from scipy.stats import norm",
+  "",
+  "class ABTest:",
+  "    @staticmethod",
+  "    def sample_size(baseline, mde, alpha=0.05, power=0.8):",
+  "        za = norm.ppf(1-alpha/2)",
+  "        zb = norm.ppf(power)",
+  "        p1, p2 = baseline, baseline*(1+mde)",
+  "        pool = (p1+p2)/2",
+  "        n = ((za*np.sqrt(2*pool*(1-pool)) +",
+  "              zb*np.sqrt(p1*(1-p1)+p2*(1-p2)))**2) / (p1-p2)**2",
+  "        return int(np.ceil(n))",
+  "",
+  "    @staticmethod",
+  "    def prop_test(c_conv, c_n, t_conv, t_n):",
+  "        table = np.array([[c_conv, c_n-c_conv],",
+  "                          [t_conv, t_n-t_conv]])",
+  "        chi2, p, _, _ = stats.chi2_contingency(table)",
+  "        lift = (t_conv/t_n - c_conv/c_n) / (c_conv/c_n) * 100",
+  "        sig = p < 0.05",
+  "        rec = 'SHIP' if (sig and lift>0) else 'HOLD'",
+  "        return {'chi2':round(chi2,4), 'p':round(p,6),",
+  "                'lift':str(round(lift,1))+'%', 'sig':sig, 'rec':rec}",
+  "",
+  "print('Sample size:', ABTest.sample_size(0.12, 0.10))",
+  "print(ABTest.prop_test(1200, 10000, 1350, 10000))"
+].join("\n");
+p5.sqlQueries = [
+  {title:"Experiment Results with Confidence Intervals",sql:"WITH exp AS (\n  SELECT variant,\n    COUNT(*) AS users,\n    SUM(converted) AS conversions,\n    ROUND(AVG(converted)*100, 2) AS conv_rate\n  FROM ab_events\n  WHERE experiment_id = 'checkout_v2'\n    AND event_date BETWEEN '2024-01-15' AND '2024-02-15'\n  GROUP BY variant\n)\nSELECT variant, users, conversions, conv_rate,\n  ROUND(conv_rate - 1.96*SQRT(conv_rate*(100-conv_rate)/users), 2) AS ci_lower,\n  ROUND(conv_rate + 1.96*SQRT(conv_rate*(100-conv_rate)/users), 2) AS ci_upper\nFROM exp;",insight:"Control: 12.00% [11.36-12.64]. Treatment: 13.50% [12.83-14.17]. CIs don't overlap \u2014 statistically significant."},
+  {title:"Daily Cumulative Conversion Tracking",sql:"SELECT event_date, variant,\n  SUM(COUNT(*)) OVER (PARTITION BY variant ORDER BY event_date) AS cum_users,\n  SUM(SUM(converted)) OVER (PARTITION BY variant ORDER BY event_date) AS cum_conv,\n  ROUND(SUM(SUM(converted)) OVER (PARTITION BY variant ORDER BY event_date)*100.0\n    / SUM(COUNT(*)) OVER (PARTITION BY variant ORDER BY event_date), 2) AS cum_rate\nFROM ab_events\nWHERE experiment_id = 'checkout_v2'\nGROUP BY event_date, variant ORDER BY event_date;",insight:"Treatment pulled ahead Day 5, maintained lift through Day 30. No novelty effect \u2014 safe to ship."}
+];
+p5.charts = {
+  bar1:{type:"bar",title:"Conversion Rate (%)",labels:["Control","Treatment"],datasets:[{label:"Conv Rate",data:[12.0,13.5],bg:["#64748b","#10b981"]}]},
+  line1:{type:"line",title:"Cumulative Conversion Over Time (%)",labels:["D1","D5","D10","D15","D20","D25","D30"],datasets:[{label:"Control",data:[11.2,11.8,12.0,12.1,12.0,12.0,12.0],color:"#64748b"},{label:"Treatment",data:[11.5,12.8,13.2,13.4,13.5,13.5,13.5],color:"#10b981"}]},
+  bar2:{type:"bar",title:"Required Sample Size by MDE",labels:["5% MDE","10% MDE","15% MDE","20% MDE"],datasets:[{label:"Per Variant",data:[30000,8200,3800,2200],bg:"#10b981"}]}
+};
+projects.push(p5);
+
+// Project 6: Anomaly Detection
+var p6 = {id:"anomaly-detection",title:"Supply Chain Anomaly Detection",cat:"ML & Analytics",color:"#ef4444",icon:"\u{1F50D}"};
+p6.desc = "Isolation Forest + Z-score ensemble detecting 340+ monthly anomalies in 2M+ records.";
+p6.tools = ["Python","Scikit-learn","SQL","Tableau","Airflow"];
+p6.impact = ["340+ anomalies/month detected","Resolution time reduced 45%","~$200K annual savings"];
+p6.github = "github.com/srujanagopisetti/supply-chain-anomaly-detection";
+p6.fullDesc = "Supply chain anomalies \u2014 inventory discrepancies, delivery delays, pricing errors \u2014 compound into significant losses. This project applies Isolation Forest + Z-score to 2M+ records, runs daily via Airflow, and pushes to Tableau with Slack alerts.\n\nCatches 340+ anomalies/month, reduced resolution by 45%, saves ~$200K annually.";
+p6.methodology = ["Profiled 2M+ records for normal baselines","Engineered 12 features: rolling avgs, variance ratios","Isolation Forest (contamination=0.02) with 5-fold CV","Z-score for interpretable univariate alerts","Airflow DAG with daily scoring + Slack alerts"];
+p6.code = [
+  "import pandas as pd",
+  "import numpy as np",
+  "from sklearn.ensemble import IsolationForest",
+  "from sklearn.preprocessing import StandardScaler",
+  "",
+  "class AnomalyDetector:",
+  "    def __init__(self):",
+  "        self.model = IsolationForest(contamination=0.02, n_estimators=200)",
+  "        self.scaler = StandardScaler()",
+  "",
+  "    def features(self, df):",
+  "        g = df.groupby(['warehouse_id','product_id'])",
+  "        df['qty_ma'] = g['quantity'].transform(lambda x: x.rolling(7,1).mean())",
+  "        df['qty_std'] = g['quantity'].transform(lambda x: x.rolling(7,1).std().fillna(0))",
+  "        df['qty_z'] = (df['quantity']-df['qty_ma'])/df['qty_std'].replace(0,1)",
+  "        df['cost_var'] = (df['unit_cost']-g['unit_cost'].transform(",
+  "            lambda x: x.rolling(30,1).mean()))/df['unit_cost']*100",
+  "        self.cols = ['qty_z','cost_var','quantity','unit_cost']",
+  "        return df",
+  "",
+  "    def detect(self, df):",
+  "        X = self.scaler.fit_transform(df[self.cols].fillna(0))",
+  "        df['anomaly'] = (self.model.fit_predict(X)==-1).astype(int)",
+  "        print('Found: ' + str(df['anomaly'].sum()) + ' anomalies')",
+  "        return df",
+  "",
+  "det = AnomalyDetector()",
+  "df = det.features(pd.read_csv('data/supply_chain.csv'))",
+  "df = det.detect(df)"
+].join("\n");
+p6.sqlQueries = [
+  {title:"Anomaly Rate by Warehouse",sql:"SELECT w.warehouse_name, w.region,\n  COUNT(*) AS total_txns,\n  SUM(a.is_anomaly) AS anomalies,\n  ROUND(SUM(a.is_anomaly)*100.0/COUNT(*), 2) AS anomaly_rate,\n  ROUND(SUM(CASE WHEN a.is_anomaly=1 THEN a.estimated_loss ELSE 0 END), 0) AS est_loss\nFROM anomaly_scores a\nJOIN warehouses w ON a.warehouse_id = w.id\nGROUP BY w.warehouse_name, w.region\nORDER BY anomaly_rate DESC;",insight:"Warehouse TX-03 has 4.8% anomaly rate (3x average) and $42K monthly losses. Root cause: new supplier integration."},
+  {title:"Anomaly Trend with 7-Day Moving Average",sql:"WITH daily AS (\n  SELECT score_date,\n    SUM(is_anomaly) AS daily_anomalies,\n    SUM(estimated_loss) AS daily_loss\n  FROM anomaly_scores GROUP BY score_date\n)\nSELECT score_date, daily_anomalies, daily_loss,\n  ROUND(AVG(daily_anomalies) OVER (\n    ORDER BY score_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW\n  ), 1) AS ma_7d,\n  ROUND(AVG(daily_loss) OVER (\n    ORDER BY score_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW\n  ), 0) AS ma_7d_loss\nFROM daily ORDER BY score_date;",insight:"7-day MA dropped from 14.2 to 8.6 anomalies/day after supplier fix in Week 8. Loss: $1,200/day down to $680/day."}
+];
+p6.charts = {
+  bar1:{type:"bar",title:"Monthly Anomalies by Category",labels:["Inventory","Cost Variance","Delivery Delay","Other"],datasets:[{label:"Count",data:[145,88,72,35],bg:["#ef4444","#f97316","#f59e0b","#64748b"]}]},
+  line1:{type:"line",title:"Weekly Anomaly Trend (12 Weeks)",labels:["W1","W2","W3","W4","W5","W6","W7","W8","W9","W10","W11","W12"],datasets:[{label:"Anomalies",data:[98,105,92,88,82,75,68,52,48,44,41,38],color:"#ef4444"},{label:"Est Loss ($K)",data:[18,21,17,16,15,13,12,9,8,7,7,6],color:"#f59e0b"}]},
+  doughnut1:{type:"doughnut",title:"Anomaly Source Distribution",labels:["Inventory","Cost","Delivery","Other"],data:[43,26,21,10],colors:["#ef4444","#f97316","#f59e0b","#64748b"]},
+  bar2:{type:"bar",title:"Resolution Time: Before vs After (Hrs)",labels:["Inventory","Cost Variance","Delivery","Other"],datasets:[{label:"Before",data:[48,36,24,18],bg:"#ef4444"},{label:"After",data:[26,20,13,10],bg:"#10b981"}]}
+};
+projects.push(p6);
+
+// ---- RENDERING ----
+var view = 'home';
+var curProj = null;
+var curTab = 'overview';
+var activeNav = 'About';
+var navSections = ["About","Skills","Experience","Projects","Education","Contact"];
+var chartInstances = [];
+
+function destroyCharts(){ chartInstances.forEach(function(c){c.destroy();}); chartInstances=[]; }
+
+function renderNav(){
+  var c = document.getElementById('navLinks');
+  c.innerHTML = '';
+  if(view === 'detail'){
+    var b = document.createElement('button');
+    b.textContent = '\u2190 Portfolio';
+    b.onclick = function(){ view='home'; curProj=null; render(); window.scrollTo(0,0); };
+    c.appendChild(b);
+    return;
+  }
+  navSections.forEach(function(n){
+    var b = document.createElement('button');
+    b.textContent = n;
+    b.className = activeNav===n ? 'ac' : '';
+    b.onclick = function(){ activeNav=n; var el=document.getElementById(n); if(el) el.scrollIntoView({behavior:'smooth'}); renderNav(); };
+    c.appendChild(b);
+  });
+}
+
+function mktag(text, color){
+  if(color) return '<span class="tg" style="background:'+color+'18;color:'+color+'">'+text+'</span>';
+  return '<span class="tg">'+text+'</span>';
+}
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function renderHome(){
+  var h = '';
+  // Hero
+  h += '<section class="hero"><div class="av">SG</div>';
+  h += '<h1>'+P.name+'</h1>';
+  h += '<p class="sub">'+P.title+'</p>';
+  h += '<p class="tl">'+P.tagline+'</p>';
+  h += '<div class="cr">';
+  P.certs.forEach(function(c){ h += mktag(c); });
+  h += '</div></section>';
+
+  // About
+  h += '<section id="About" class="sec"><div class="st"><h2>About Me</h2><div class="br"></div></div>';
+  h += '<div class="cd"><p style="font-size:15px;line-height:1.8;color:#cbd5e1">'+P.about+'</p>';
+  h += '<div style="display:flex;gap:20px;margin-top:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)">';
+  h += '<span>\u{1F4CD} '+P.location+'</span>';
+  h += '<span>\u{1F4E7} '+P.email+'</span>';
+  h += '<span>\u{1F517} <a href="https://'+P.github+'" target="_blank">'+P.github+'</a></span>';
+  h += '<span>\u{1F517} <a href="https://'+P.linkedin+'" target="_blank">LinkedIn</a></span>';
+  h += '</div></div></section>';
+
+  // Skills
+  h += '<section id="Skills" class="sec"><div class="st"><h2>Technical Skills</h2><div class="br"></div></div>';
+  h += '<div class="sg">';
+  P.skills.forEach(function(s){
+    h += '<div class="cd" style="padding:18px"><h3 style="font-size:12px;color:var(--accent2);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">'+s.cat+'</h3>';
+    h += '<div style="display:flex;flex-wrap:wrap;gap:5px">';
+    s.items.forEach(function(i){ h += mktag(i); });
+    h += '</div></div>';
+  });
+  h += '</div></section>';
+
+  // Experience
+  h += '<section id="Experience" class="sec"><div class="st"><h2>Experience</h2><div class="br"></div></div>';
+  h += '<div class="tl2"><div class="tl2-line"></div>';
+  P.exp.forEach(function(e){
+    h += '<div class="tl2-item"><div class="tl2-dot"></div><div class="cd" style="padding:22px">';
+    h += '<h3>'+e.role+'</h3><p class="co">'+e.co+'</p><p class="pe">'+e.period+'</p><ul>';
+    e.hl.forEach(function(x){ h += '<li>'+x+'</li>'; });
+    h += '</ul></div></div>';
+  });
+  h += '</div></section>';
+
+  // Projects
+  h += '<section id="Projects" class="sec"><div class="st"><h2>Featured Projects</h2><div class="br"></div></div>';
+  h += '<div class="pg">';
+  projects.forEach(function(p){
+    h += '<div class="pc" onclick="openProject(\''+p.id+'\')">';
+    h += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="font-size:26px">'+p.icon+'</span>'+mktag(p.cat,p.color)+'</div>';
+    h += '<h3 style="font-size:16px;font-weight:700;margin-bottom:8px">'+p.title+'</h3>';
+    h += '<p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px">'+p.desc+'</p>';
+    p.impact.forEach(function(im){
+      h += '<div style="display:flex;gap:6px;margin-bottom:4px"><span style="color:'+p.color+';font-size:13px">\u25B8</span><span style="font-size:12px;color:#cbd5e1">'+im+'</span></div>';
+    });
+    h += '<div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:14px">';
+    p.tools.forEach(function(t){ h += mktag(t); });
+    h += '</div><div style="margin-top:14px;font-size:12px;font-weight:600;color:'+p.color+'">View full project \u2192</div></div>';
+  });
+  h += '</div></section>';
+
+  // Education
+  h += '<section id="Education" class="sec"><div class="st"><h2>Education</h2><div class="br"></div></div>';
+  h += '<div class="eg">';
+  P.edu.forEach(function(e){
+    h += '<div class="cd" style="padding:22px"><p style="font-size:12px;color:var(--accent2);font-weight:600;margin-bottom:4px">'+e.period+'</p>';
+    h += '<h3 style="font-size:16px;font-weight:700;margin-bottom:5px">'+e.deg+'</h3>';
+    h += '<p style="font-size:13px;color:var(--muted);margin-bottom:4px">'+e.school+'</p>';
+    h += '<span class="gp">GPA: '+e.gpa+'</span></div>';
+  });
+  h += '</div></section>';
+
+  // Contact
+  h += '<section id="Contact" class="sec" style="padding-bottom:70px;text-align:center"><div class="st" style="text-align:left"><h2>Let\u2019s Connect</h2><div class="br"></div></div>';
+  h += '<div style="max-width:480px;margin:0 auto"><div class="cd" style="padding:36px">';
+  h += '<p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px">Open to opportunities, data challenges, and collaborations.</p>';
+  var ci = [["\u{1F4E7}",P.email],["\u{1F4F1}",P.phone],["\u{1F4CD}",P.location],["\u{1F517}",P.github]];
+  ci.forEach(function(x){ h += '<div class="ctr"><span>'+x[0]+'</span> '+x[1]+'</div>'; });
+  h += '</div></div></section>';
+
+  return h;
+}
+
+function renderDetail(){
+  var p = null;
+  for(var i=0;i<projects.length;i++){ if(projects[i].id===curProj) p=projects[i]; }
+  if(!p) return '';
+
+  var tabs = ['overview','methodology','sql_analysis','code','visualizations'];
+  var h = '<div style="padding-top:24px">';
+  h += '<button class="db" onclick="goHome()">\u2190 Back to Portfolio</button>';
+  h += '<div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">';
+  h += '<span style="font-size:36px">'+p.icon+'</span><div>'+mktag(p.cat,p.color);
+  h += '<h1 style="font-size:28px;font-weight:800;margin-top:6px">'+p.title+'</h1></div></div>';
+  h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">';
+  p.tools.forEach(function(t){ h += mktag(t,p.color); });
+  h += '</div>';
+  h += '<div style="font-size:13px;color:var(--muted);margin-bottom:28px">\u{1F4C1} <a href="https://'+p.github+'" target="_blank">'+p.github+'</a></div>';
+
+  // Tabs
+  h += '<div class="tabs">';
+  tabs.forEach(function(t){
+    var label = t.replace('_',' ');
+    h += '<button class="'+(curTab===t?'ac':'')+'" onclick="switchTab(\''+t+'\')">'+label+'</button>';
+  });
+  h += '</div>';
+
+  // Content
+  if(curTab === 'overview'){
+    h += '<div class="cd"><h3 style="font-size:16px;font-weight:700;margin-bottom:14px">Project Overview</h3>';
+    var paras = p.fullDesc.split('\n\n');
+    paras.forEach(function(para){ h += '<p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px">'+para+'</p>'; });
+    h += '</div><div class="cd"><h3 style="font-size:16px;font-weight:700;margin-bottom:14px">Key Impact</h3>';
+    p.impact.forEach(function(im,i){
+      h += '<div style="display:flex;gap:10px;margin-bottom:10px"><span style="background:'+p.color+';color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">'+(i+1)+'</span>';
+      h += '<span style="font-size:14px;color:#cbd5e1;line-height:1.6">'+im+'</span></div>';
+    });
+    h += '</div>';
+  } else if(curTab === 'methodology'){
+    h += '<div class="cd"><h3 style="font-size:16px;font-weight:700;margin-bottom:18px">Methodology & Approach</h3>';
+    p.methodology.forEach(function(s,i){
+      h += '<div class="si"><div class="sn" style="background:linear-gradient(135deg,'+p.color+','+p.color+'aa)">'+(i+1)+'</div>';
+      h += '<p style="font-size:14px;color:#cbd5e1;line-height:1.7">'+s+'</p></div>';
+    });
+    h += '</div>';
+  } else if(curTab === 'sql_analysis'){
+    h += '<div class="cd"><h3 style="font-size:16px;font-weight:700;margin-bottom:6px">SQL Queries & Insights</h3>';
+    h += '<p style="font-size:13px;color:var(--muted);margin-bottom:4px">'+p.sqlQueries.length+' analytical queries with business insights.</p></div>';
+    p.sqlQueries.forEach(function(q,i){
+      h += '<div class="sq"><div class="sqt"><span class="sqn">'+(i+1)+'</span>'+q.title+'</div>';
+      h += '<pre>'+esc(q.sql)+'</pre>';
+      h += '<div class="ins">\u{1F4A1} <strong>Insight:</strong> '+q.insight+'</div></div>';
+    });
+  } else if(curTab === 'code'){
+    h += '<div class="cb"><div class="ch"><span>Python Source Code</span>'+mktag('Python',p.color)+'</div>';
+    h += '<pre><code>'+esc(p.code)+'</code></pre></div>';
+  } else if(curTab === 'visualizations'){
+    var keys = Object.keys(p.charts);
+    h += '<div class="cd"><h3 style="font-size:16px;font-weight:700;margin-bottom:6px">Interactive Visualizations</h3>';
+    h += '<p style="font-size:13px;color:var(--muted)">Charts built from project analysis data.</p></div>';
+    // Render in pairs
+    for(var i=0; i<keys.length; i+=2){
+      h += '<div class="cg">';
+      h += '<div class="cd"><h4 style="font-size:14px;font-weight:600;margin-bottom:8px;color:var(--text)">'+p.charts[keys[i]].title+'</h4><div class="cc"><canvas id="chart_'+keys[i]+'"></canvas></div></div>';
+      if(keys[i+1]){
+        h += '<div class="cd"><h4 style="font-size:14px;font-weight:600;margin-bottom:8px;color:var(--text)">'+p.charts[keys[i+1]].title+'</h4><div class="cc"><canvas id="chart_'+keys[i+1]+'"></canvas></div></div>';
+      }
+      h += '</div>';
+    }
+  }
+
+  h += '<div style="height:60px"></div></div>';
+  return h;
+}
+
+function initCharts(){
+  destroyCharts();
+  if(view !== 'detail' || curTab !== 'visualizations') return;
+  var p = null;
+  for(var i=0;i<projects.length;i++){ if(projects[i].id===curProj) p=projects[i]; }
+  if(!p) return;
+
+  Chart.defaults.color = '#94a3b8';
+  Chart.defaults.font.family = 'Inter';
+
+  var keys = Object.keys(p.charts);
+  keys.forEach(function(id){
+    var cfg = p.charts[id];
+    var el = document.getElementById('chart_'+id);
+    if(!el) return;
+    var ctx = el.getContext('2d');
+    var chartCfg;
+
+    if(cfg.type === 'bar'){
+      chartCfg = {
+        type:'bar',
+        data:{labels:cfg.labels, datasets:cfg.datasets.map(function(ds){
+          return {label:ds.label, data:ds.data, backgroundColor:ds.bg, borderRadius:4, barPercentage:0.7};
+        })},
+        options:{responsive:true, maintainAspectRatio:false,
+          plugins:{legend:{labels:{boxWidth:12,padding:10}}},
+          scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},beginAtZero:true}}}
+      };
+    } else if(cfg.type === 'line'){
+      chartCfg = {
+        type:'line',
+        data:{labels:cfg.labels, datasets:cfg.datasets.map(function(ds){
+          return {label:ds.label, data:ds.data, borderColor:ds.color, backgroundColor:ds.color+'20',
+            borderWidth:2, pointRadius:3, pointBackgroundColor:ds.color,
+            tension:0.3, fill:false, spanGaps:true,
+            borderDash: ds.dash ? [6,4] : []};
+        })},
+        options:{responsive:true, maintainAspectRatio:false,
+          plugins:{legend:{labels:{boxWidth:12,padding:10}}},
+          scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(255,255,255,0.06)'},beginAtZero:true}}}
+      };
+    } else if(cfg.type === 'doughnut'){
+      chartCfg = {
+        type:'doughnut',
+        data:{labels:cfg.labels, datasets:[{data:cfg.data, backgroundColor:cfg.colors, borderWidth:0}]},
+        options:{responsive:true, maintainAspectRatio:false, cutout:'55%',
+          plugins:{legend:{position:'right',labels:{boxWidth:10,padding:8,font:{size:11}}}}}
+      };
+    }
+    if(chartCfg){
+      chartInstances.push(new Chart(ctx, chartCfg));
+    }
+  });
+}
+
+function render(){
+  destroyCharts();
+  document.getElementById('app').innerHTML = (view === 'detail') ? renderDetail() : renderHome();
+  renderNav();
+  if(view === 'detail' && curTab === 'visualizations'){
+    setTimeout(initCharts, 50);
+  }
+}
+
+window.openProject = function(id){ view='detail'; curProj=id; curTab='overview'; render(); window.scrollTo(0,0); };
+window.goHome = function(){ view='home'; curProj=null; render(); window.scrollTo(0,0); };
+window.switchTab = function(t){ curTab=t; render(); };
+
+render();
+</script>
+</body>
+</html>
